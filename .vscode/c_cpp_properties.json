@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "ROS",
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/usr/include/**",
+                "/usr/include/aarch64-linux-gnu/c++/11/",
+                "/usr/include/x86_64-linux-gnu/c++/11/",
+                "/usr/include/c++/11/",
+                "/usr/include/clang/14/include/",
+                "/opt/ros/foxy/include/**",
+                "/opt/ros/foxy/install/include/**",
+                "/f1tenth_system/install/**",
+                "/f1tenth_system/src/**"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}

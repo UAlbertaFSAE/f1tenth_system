@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  jetson:
+    container_name: f1tenth_system
+    build:
+      dockerfile: Dockerfile
+    network_mode: host
+    privileged: true
+    # runtime: nvidia
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+    environment:
+      - DISPLAY=${DISPLAY}
+      - ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST
+      - ROS_DOMAIN_ID=42
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+      # - CYCLONEDDS_URI=file:///f1tenth/cyclonedds_config.xml
+    volumes:
+      - .:/f1tenth_system:cached
+      - /dev:/dev
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # - /usr/local/cuda:/usr/local/cuda
+    tty: true
+    stdin_open: true
